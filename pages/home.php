@@ -17,3 +17,19 @@
         </div>
     </article>
 </section>
+
+<?php
+
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=my_anime_list','root','');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // var_dump($pdo);
+    
+
+} catch(PDOException $e){
+    echo "Connection failed:" . $e->getMessage();
+    exit();
+} 
+var_dump($pdo);
+// $pdo->query()
+?>
