@@ -1,0 +1,343 @@
+#add-anime-title{
+    text-align: center;
+}
+
+#form-add-anime{
+    margin-top: 2rem;
+}
+
+#form-add-anime>form{
+    border: 1px solid;
+    -webkit-box-shadow: 5px 5px 0px 0px #edbc28, 10px 10px 0px 0px #ffe75f, 15px 15px 0px 0px #fff7a1, 20px 20px 0px 0px #fcffca, 25px 25px 0px 0px #f9ffe1, 8px 7px 9px 1px rgba(192,196,36,0); 
+    box-shadow: 5px 5px 0px 0px #edbc28, 10px 10px 0px 0px #ffe75f, 15px 15px 0px 0px #fff7a1, 20px 20px 0px 0px #fcffca, 25px 25px 0px 0px #f9ffe1, 8px 7px 9px 1px rgba(192,196,36,0);
+}
+
+#form-add-anime>form, #top-left, #top-right, #bot-left, #bot-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#top-left, #top-right, #bot-left, #bot-right{
+    width: 50%;
+}
+
+#top-left>label, #bot-left>label{
+    margin: 1rem 0 5px 0;
+}
+
+#top-block-add-anime, #bot-block-add-anime{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 2rem 0;
+    align-items: center;
+    justify-content: center;
+}
+#top-block-add-anime{
+    margin-top: 2rem;
+}
+
+#top-left, #bot-left, #bot-right{
+    margin-bottom: 3rem;
+}
+
+#bot-left{
+    padding-bottom: 3rem;
+}
+ 
+/* ---------------------------------------  File input  --------------------------------------------- */
+
+input[type=file]{
+    position: absolute;
+    left: -9999999rem;
+}
+
+label[for="img-anime"]{
+    border: none;
+    background: #eda84da2;
+    padding: 8px 12px;
+    color: #000000;
+    cursor: pointer;
+}
+
+label[for="img-anime"]:hover {
+    background: #fdb653;
+}
+
+/* ----------------------------------------   Input text/number /Select  effect   --------------------------------------------- */
+
+.effect{
+    font-size: large;
+    color: #333; 
+    width: 100%; 
+    letter-spacing: 1px;
+}
+
+.effect:focus{outline: none;}
+/* necessary to give position: relative to parent. */
+
+.col-3{
+    width: 60%;
+    position: relative;
+} 
+
+.effect{
+    padding: 4px 0; 
+    border: 0; 
+    border-bottom: 1px solid #888787;
+    background-color: transparent;
+}
+  
+.focus-border{
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    width: 0; 
+    height: 2px; 
+    background-color: #af914c; 
+    transition: 0.4s;
+}
+.effect:focus ~ .focus-border{ /* ~ = next sibling */
+    width: 100%;
+    transition: 0.4s;
+    left: 0;
+}
+.effect ~ label{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 9px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+}
+
+
+.effect:focus ~ label{
+    top: -16px;
+    font-size: 12px;
+    color: #717171;
+    transition: 0.3s;
+}
+
+#input-name-add-anime, #input-select-type, #input-release-date-container{
+    margin-bottom: 3rem;
+}
+
+/* for select input */
+select[name="type"] ~ label{
+    top: -16px
+}
+/* for number input */
+#input-rate-container{
+    width: 100%;
+}
+
+/* let label on top if value.length > 0 */
+.top-label ~ label { 
+    top: -16px;
+}
+/* ----------------------------------------------   Date    ---------------------------------------------------- */
+
+#input-release-date-container{
+    position: relative;
+    margin-top: 2rem;
+}
+
+#input-release-date-container>label{
+    display: block;
+    margin-bottom: 5rem;  
+}
+
+input[type="date"]{
+    background-color: #eda84da2;
+    padding: 15px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-family: "Roboto Mono",monospace;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    /* outline: none; */
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* ----------------------------------------------   Textarea    ---------------------------------------------------- */
+
+#textarea-container{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    margin-bottom: 10px;
+    border: solid black;
+    border-width: 3px 3px 5px 5px;
+    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+    padding: 0;
+    overflow: hidden;
+}
+
+label[for="synopsis"]{
+    color: #141414;
+    margin-bottom: 1rem;
+}
+
+textarea[name="synopsis"]{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    padding: 15px;
+    resize: none;
+    display: inline-block;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+textarea[name="synopsis"]::-webkit-scrollbar {
+    width: 1em;
+}
+
+textarea[name="synopsis"]::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+textarea[name="synopsis"]::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+/* -------------------------------------- Change resize apparence of textearea  -------------------------------y */
+/* textarea[name="synopsis"]::-webkit-resizer {
+    position:absolute;
+    content:"";
+    margin:50px;
+    width:0;
+    height:0;
+    border-top:15px solid transparent;
+    border-right:15px solid #000;
+    border-bottom:15px solid #000;
+    border-left:15px solid transparent;
+} */
+
+/* ----------------------------------------------   Remove added image    ---------------------------------------------------- */
+
+#container-img-added{
+    position: relative;
+}
+
+#img-added{
+    display: block;
+    max-width: 150px;
+    max-height: 100px;
+    position: absolute;
+    top: -0.75rem;
+    left: -4.5rem;
+}
+#img-added>p{
+    word-wrap: break-word;
+}
+
+.close {
+    opacity: 0.3;
+}
+.close:hover {
+    opacity: 1;
+}
+.close:before, .close:after {
+    position: absolute;
+    top: 0;
+    right: -6rem;
+    content: ' ';
+    height: 16px;
+    width: 2px;
+    background-color: #333;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+  
+
+/* ----------------------------------------------   Submit Button    ---------------------------------------------------- */
+
+#submit-add-anime{
+    font-family: "Anime";
+    font-size: large;
+    top: inherit;
+    left: inherit;
+}
+
+/* -----------------------------------------------  Media Queries   ------------------------------------------------------ */
+
+
+
+@media only screen and (min-device-width : 600px){
+    #input-rate-container{
+        width: 60%;
+    }
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px){
+    /* Styles */
+
+    #form-add-anime>form{
+        margin-top: 3rem;
+    }
+
+
+    #top-block-add-anime, #bot-block-add-anime{
+        flex-direction: row;
+    }
+
+    #top-left{
+        margin-bottom: 0;
+    }
+
+    #textarea-container{
+        min-width: 60%;
+        max-width: 60%;
+    }
+
+    label[for="synopsis"]{
+        font-size: larger;
+    }
+
+    #container-img-added{
+        margin: 0 2rem;
+    }
+}
+
+@media only screen and (min-device-width : 1024px){
+
+    #form-add-anime{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #form-add-anime>form{
+        width: 60%;
+        margin-top: 0;
+    }
+
+    
+    #submit-add-anime{
+        font-size: x-large;
+    }
+
+}

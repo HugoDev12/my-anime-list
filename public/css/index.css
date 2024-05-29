@@ -57,7 +57,7 @@
 
 /*--------------------------------------------- Card Button ---------------------------------------- */
 
-.card-btn {
+.card-btn, #submit-add-anime {
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
@@ -75,7 +75,7 @@
   left: 65%;
 }
 
-.card-btn:after {
+.card-btn:after, #submit-add-anime:after {
   content: "";
   background-color: #fe7b7b;
   width: 100%;
@@ -87,7 +87,7 @@
   transition: 0.2s;
 }
 
-.card-btn:hover:after {
+.card-btn:hover:after, #submit-add-anime:hover:after {
   top: 0px;
   left: 0px;
 }
