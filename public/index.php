@@ -1,4 +1,7 @@
 <?php
+require '../app/Autoloader.php';
+App\Autoloader::register();
+
 
 if(isset($_GET["p"])){
     $route = $_GET["p"];
@@ -13,6 +16,9 @@ if($route === "home"){
 }
 if($route === "add-anime"){
     require '../pages/add-anime.php';
+}
+if($route === "login"){
+    require '../pages/login.php';
 }
 
 $content = ob_get_clean(); // et là il va être affiché

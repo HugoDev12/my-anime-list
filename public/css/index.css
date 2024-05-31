@@ -1,13 +1,23 @@
+/* -----------------------------------------------    Card Container  --------------------------------------------------- */
+
+#anime-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 
 /* ---------------------------------------------------- Card Image  --------------------------------------------- */
 .card{
+    
     height:500px;
     width:250px;
     background-color:#fff;
     border:5px solid black;
-    box-shadow:0 0 0 7px #fff,0 0  8px 5px #000;
-    /* position: relative; */
+    box-shadow:0 0 0 7px #fff,0 0 8px 5px #000;
+    margin: 2rem;
+    position: relative;
 }
 .card>figure{
     position: relative;
@@ -43,9 +53,11 @@
     position: absolute;
     /* margin-top: 1em; */
 }
+
 .card-rate>h3{
     margin-bottom: 0.5em;
     margin-left: 0.5em;
+    width: 40%;
 }
 .card-rate>span{
     margin: 0;
@@ -57,7 +69,7 @@
 
 /*--------------------------------------------- Card Button ---------------------------------------- */
 
-.card-btn, #submit-add-anime {
+.card-btn, #submit-add-anime, button[name="login"], button[name="sign-in"] {
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
@@ -75,7 +87,7 @@
   left: 65%;
 }
 
-.card-btn:after, #submit-add-anime:after {
+.card-btn:after, #submit-add-anime:after, button[name="login"]:after, button[name="sign-in"]:after {
   content: "";
   background-color: #fe7b7b;
   width: 100%;
@@ -87,7 +99,7 @@
   transition: 0.2s;
 }
 
-.card-btn:hover:after, #submit-add-anime:hover:after {
+.card-btn:hover:after, #submit-add-anime:hover:after, button[name="login"]:hover:after, button[name="sign-in"]:hover:after {
   top: 0px;
   left: 0px;
 }

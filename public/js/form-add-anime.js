@@ -11,7 +11,7 @@ inputs.forEach(i => {
 });
 
 // display img name file when selected
-let imgFile = document.getElementById("img-anime");
+let imgFile = document.getElementById("image");
 imgFile.addEventListener("change", function(){
     const [file] = imgFile.files;
 

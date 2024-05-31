@@ -68,7 +68,7 @@ nav>ul>li{
     justify-content: center;
 }
 
-nav>ul>li>div{
+nav>ul>li>div, #login{
     height: 2.5em;
     width:7rem;
     background: inherit;
@@ -81,9 +81,31 @@ nav>ul>li>div{
     align-items: center;
     justify-content: center;
 }
-nav>ul>li>div:hover{
+
+#login{
+    position: absolute;
+    right: 0.3rem;
+    top: 5px;
+    height: 1.5em;
+    width: 4rem;
+    border-width: 2px 2px 3px 3px;
+}
+
+#login>a{
+    font-size: small;
+    transform: rotate(2deg);
+    padding-right: 3px;
+    padding-left: 5px;
+    border:1px solid #222;
+    box-shadow: 1px 1px 0 #222;
+    font-family: "Anime";
     background-color: white;
 }
+
+nav>ul>li>div:hover, #login:hover{
+    background-color: white;
+}
+
 .nav-item{
     transform: rotate(2deg);
     margin: 0 1rem;
@@ -150,5 +172,20 @@ footer>h3{
     /* Styles */
     header{
         background-position: 0 0;
+    }
+
+}
+@media only screen and (min-device-width : 768px){
+    #login{
+        right: 1rem;
+        top: 1rem;
+        height: 2em;
+        width: 5rem;
+        border-width: 2px 2px 3px 3px;
+    }
+    
+    #login>a{
+        font-size: large;
+        box-shadow: 2px 2px 0 #222;
     }
 }

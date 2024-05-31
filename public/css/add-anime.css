@@ -53,7 +53,7 @@ input[type=file]{
     left: -9999999rem;
 }
 
-label[for="img-anime"]{
+label[for="image"]{
     border: none;
     background: #eda84da2;
     padding: 8px 12px;
@@ -61,7 +61,7 @@ label[for="img-anime"]{
     cursor: pointer;
 }
 
-label[for="img-anime"]:hover {
+label[for="image"]:hover {
     background: #fdb653;
 }
 
@@ -303,11 +303,25 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
 
     #top-block-add-anime, #bot-block-add-anime{
         flex-direction: row;
+        margin: 0;
+    }
+
+    #top-block-add-anime{
+        margin-top: 0;
     }
 
     #top-left{
-        margin-bottom: 0;
+        margin-bottom: 3rem;
     }
+
+    #bot-left{
+        margin-top:-4rem;
+    }
+
+    #bot-right{
+        margin-top: 1rem;
+    }
+
 
     #textarea-container{
         min-width: 60%;
@@ -335,6 +349,9 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
         margin-top: 0;
     }
 
+    #top-block-add-anime, #bot-block-add-anime{
+        margin: 0 0 2rem 0;
+    }
     
     #submit-add-anime{
         font-size: x-large;

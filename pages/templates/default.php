@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../public/css/all.css">
     <link rel="stylesheet" href="../../public/css/index.css">
     <link rel="stylesheet" href="../../public/css/add-anime.css">
+    <link rel="stylesheet" href="../../public/css/login.css">
     <link rel="icon" type="image/x-icon" href="../../imgs/f8d57c53ea2a50fdbd721c6191315fb5.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Pour les classes fa (logos) -->
     <title>MyAnimeList</title>
@@ -14,6 +15,9 @@
     <header>
         <div id="header-block">
             <h1>MyAnimeList</h1>
+            <aside id="login">
+                    <a href="../../public/index.php?p=login">Login</a>
+                </aside>
             <nav>
                 <ul>
                     <li>
@@ -43,3 +47,5 @@
     <script src="/public/js/form-add-anime.js"></script>
 </body>
 </html>
+
+    <!--<script src="/public/js/form-add-anime.js"></script>-->

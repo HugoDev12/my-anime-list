@@ -1,0 +1,76 @@
+#login-title{
+    text-align: center;
+}
+#form-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+#form-login>form{
+    border: 1px solid;
+    -webkit-box-shadow: -5px 5px 0px 0px #edbc28,
+    -10px 10px 0px 0px #ffe75f, 
+    -15px 15px 0px 0px #fff7a1, 
+    -20px 20px 0px 0px #fcffca, 
+    -25px 25px 0px 0px #f9ffe1, 
+    8px 7px 9px 1px rgba(192,196,36,0); 
+    box-shadow: -5px 5px 0px 0px #edbc28,
+    -10px 10px 0px 0px #ffe75f, 
+    -15px 15px 0px 0px #fff7a1, 
+    -20px 20px 0px 0px #fcffca, 
+    -25px 25px 0px 0px #f9ffe1,  
+    8px 7px 9px 1px rgba(192,196,36,0); 
+    width: 80%;
+    max-width: 650px;
+
+}
+#login-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-username-container, 
+#login-pass-container{
+    margin: 2rem 0;
+    width: 50%;
+}
+
+#btn-login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button[name="login"], 
+button[name="sign-in"]{
+    /* width: 40%; */
+    max-width: 150px;
+    left: 0;
+    margin: 1.5rem 0;
+}
+
+button[name="login"]:after{
+    background-color: #edbc28;
+}
+
+
+@media only screen and (min-device-width : 768px){
+
+    #login-username-container, 
+    #login-pass-container{
+        width: 40%;
+    }
+
+    #btn-login-container{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    button[name="login"], 
+    button[name="sign-in"]{
+        margin: 2.5rem 0 3.5rem 0;
+    }
+}
