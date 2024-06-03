@@ -20,26 +20,26 @@
     position: relative;
 }
 .card>figure{
-    position: relative;
+    /* position: relative; */
     height: 70%;
     padding: 0;
     margin: 0;
-    background-color: rgba(255, 216, 144, 0.737);
+    display: flex;
+    justify-content: center;
+    /* background-color: rgba(255, 216, 144, 0.737); */
 }
-.card>figure>img{
+/* .card>figure>img{
     width: 130%;
     height: 100%;
-    position: absolute;
-    left: -2em;
-}
+} */
 .card-text{
     border-top: 5px solid;
     height: 30%;
-    /* display: flex; */
 }
 .card-text>h2{
     text-align: center;
     font-family: "Anime";
+    overflow: hidden;
 }
 /* -------------------------------------------- Card Rate ------------------------------------------ */
 
@@ -69,7 +69,11 @@
 
 /*--------------------------------------------- Card Button ---------------------------------------- */
 
-.card-btn, #submit-add-anime, button[name="login"], button[name="sign-in"] {
+.card-btn, 
+.submit-add-anime, 
+.submit-update-anime,
+button[name="login"], 
+button[name="sign-in"] {
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
@@ -87,7 +91,11 @@
   left: 65%;
 }
 
-.card-btn:after, #submit-add-anime:after, button[name="login"]:after, button[name="sign-in"]:after {
+.card-btn:after, 
+.submit-add-anime:after,
+.submit-update-anime:after, 
+button[name="login"]:after, 
+button[name="sign-in"]:after {
   content: "";
   background-color: #fe7b7b;
   width: 100%;
@@ -99,12 +107,16 @@
   transition: 0.2s;
 }
 
-.card-btn:hover:after, #submit-add-anime:hover:after, button[name="login"]:hover:after, button[name="sign-in"]:hover:after {
+.card-btn:hover:after, 
+.submit-add-anime:hover:after, 
+.submit-update-anime:hover:after,
+button[name="login"]:hover:after, 
+button[name="sign-in"]:hover:after {
   top: 0px;
   left: 0px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
 
     /* .card{

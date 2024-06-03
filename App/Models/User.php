@@ -10,10 +10,10 @@ class User{
      */
     private $id;
 
-    /**
-     * @var string
-     */
-    private $username;
+    // /**
+    //  * @var string
+    //  */
+    // private $username;
 
     /**
      * @var string
@@ -50,27 +50,27 @@ class User{
     }
 
 
-    /**
-     * Get the value of username
-     */ 
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
+    // /**
+    //  * Get the value of username
+    //  */ 
+    // public function getUsername(): string
+    // {
+    //     return $this->username;
+    // }
 
-    /**
-     * Set the value of username
-     *
-     * @param  string  $username
-     *
-     * @return  self
-     */ 
-    public function setUsername(string $username)
-    {
-        $this->username = $username;
+    // /**
+    //  * Set the value of username
+    //  *
+    //  * @param  string  $username
+    //  *
+    //  * @return  self
+    //  */ 
+    // public function setUsername(string $username)
+    // {
+    //     $this->username = $username;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * Get the value of password

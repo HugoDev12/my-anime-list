@@ -1,32 +1,32 @@
-#add-anime-title{
+.add-anime-title{
     text-align: center;
 }
 
-#form-add-anime{
+.form-add-anime{
     margin-top: 2rem;
 }
 
-#form-add-anime>form{
+.form-add-anime>form{
     border: 1px solid;
     -webkit-box-shadow: 5px 5px 0px 0px #edbc28, 10px 10px 0px 0px #ffe75f, 15px 15px 0px 0px #fff7a1, 20px 20px 0px 0px #fcffca, 25px 25px 0px 0px #f9ffe1, 8px 7px 9px 1px rgba(192,196,36,0); 
     box-shadow: 5px 5px 0px 0px #edbc28, 10px 10px 0px 0px #ffe75f, 15px 15px 0px 0px #fff7a1, 20px 20px 0px 0px #fcffca, 25px 25px 0px 0px #f9ffe1, 8px 7px 9px 1px rgba(192,196,36,0);
 }
 
-#form-add-anime>form, #top-left, #top-right, #bot-left, #bot-right{
+.form-add-anime>form, .top-left, .top-right, .bot-left, .bot-right{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#top-left, #top-right, #bot-left, #bot-right{
+.top-left, .top-right, .bot-left, .bot-right{
     width: 50%;
 }
 
-#top-left>label, #bot-left>label{
+.top-left>label, .bot-left>label{
     margin: 1rem 0 5px 0;
 }
 
-#top-block-add-anime, #bot-block-add-anime{
+.top-block-add-anime, .bot-block-add-anime{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -34,16 +34,12 @@
     align-items: center;
     justify-content: center;
 }
-#top-block-add-anime{
+.top-block-add-anime{
     margin-top: 2rem;
 }
 
-#top-left, #bot-left, #bot-right{
+.top-left, .bot-left, .bot-right{
     margin-bottom: 3rem;
-}
-
-#bot-left{
-    padding-bottom: 3rem;
 }
  
 /* ---------------------------------------  File input  --------------------------------------------- */
@@ -67,63 +63,41 @@ label[for="image"]:hover {
 
 /* ----------------------------------------   Input text/number /Select  effect   --------------------------------------------- */
 
+/* container's input */
+.col-3{
+    width: 60%;
+    position: relative;
+} 
+/* ------------------ */
+
 .effect{
     font-size: large;
     color: #333; 
     width: 100%; 
     letter-spacing: 1px;
+    padding: 4px 0 0 0; 
+    border: 0; 
+    border-bottom: 1px solid #888787;
+    background-color: transparent;
 }
 
 .effect:focus{outline: none;}
 /* necessary to give position: relative to parent. */
 
-.col-3{
-    width: 60%;
-    position: relative;
-} 
-
-.effect{
-    padding: 4px 0; 
-    border: 0; 
-    border-bottom: 1px solid #888787;
-    background-color: transparent;
-}
-  
-.focus-border{
-    position: absolute; 
-    bottom: 0; 
-    left: 50%; 
-    width: 0; 
-    height: 2px; 
-    background-color: #af914c; 
-    transition: 0.4s;
-}
-.effect:focus ~ .focus-border{ /* ~ = next sibling */
-    width: 100%;
-    transition: 0.4s;
-    left: 0;
-}
+/* ~ = next sibling */
 .effect ~ label{
     position: absolute;
     left: 0;
     width: 100%;
-    top: 9px;
+    top: 0;
     color: #aaa;
-    transition: 0.3s;
+    transition: 0.7s;
     z-index: -1;
     letter-spacing: 0.5px;
 }
 
-
-.effect:focus ~ label{
-    top: -16px;
-    font-size: 12px;
-    color: #717171;
-    transition: 0.3s;
-}
-
-#input-name-add-anime, #input-select-type, #input-release-date-container{
-    margin-bottom: 3rem;
+select[name="type"]{
+    margin: 3rem 0;
 }
 
 /* for select input */
@@ -131,22 +105,25 @@ select[name="type"] ~ label{
     top: -16px
 }
 /* for number input */
-#input-rate-container{
+.input-rate-container{
     width: 100%;
 }
 
 /* let label on top if value.length > 0 */
 .top-label ~ label { 
     top: -16px;
+    font-size: 12px;
+    color: #717171;
+    transition: 0.3s;
 }
 /* ----------------------------------------------   Date    ---------------------------------------------------- */
 
-#input-release-date-container{
+.input-release-date-container{
     position: relative;
     margin-top: 2rem;
 }
 
-#input-release-date-container>label{
+.input-release-date-container>label{
     display: block;
     margin-bottom: 5rem;  
 }
@@ -162,7 +139,6 @@ input[type="date"]{
     color: #000000;
     font-size: 18px;
     border: none;
-    /* outline: none; */
     border-radius: 5px;
 }
 ::-webkit-calendar-picker-indicator{
@@ -174,7 +150,7 @@ input[type="date"]{
 
 /* ----------------------------------------------   Textarea    ---------------------------------------------------- */
 
-#textarea-container{
+.textarea-container{
     width: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -235,22 +211,30 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
 
 /* ----------------------------------------------   Remove added image    ---------------------------------------------------- */
 
-#container-img-added{
-    position: relative;
+.container-img-added{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
 }
 
 #img-added{
-    display: block;
     max-width: 150px;
-    max-height: 100px;
-    position: absolute;
-    top: -0.75rem;
-    left: -4.5rem;
-}
-#img-added>p{
-    word-wrap: break-word;
 }
 
+#img-added>p{
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#close-container{
+    position: relative;
+}
 .close {
     opacity: 0.3;
 }
@@ -259,12 +243,12 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
 }
 .close:before, .close:after {
     position: absolute;
-    top: 0;
-    right: -6rem;
     content: ' ';
+    top: -1rem;
     height: 16px;
     width: 2px;
     background-color: #333;
+    right: -1rem;
 }
 .close:before {
     transform: rotate(45deg);
@@ -276,7 +260,7 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
 
 /* ----------------------------------------------   Submit Button    ---------------------------------------------------- */
 
-#submit-add-anime{
+.submit-add-anime, .submit-update-anime{
     font-family: "Anime";
     font-size: large;
     top: inherit;
@@ -288,7 +272,7 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
 
 
 @media only screen and (min-device-width : 600px){
-    #input-rate-container{
+    .input-rate-container{
         width: 60%;
     }
 }
@@ -296,34 +280,33 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
 @media only screen and (min-device-width : 768px){
     /* Styles */
 
-    #form-add-anime>form{
+    .form-add-anime>form{
         margin-top: 3rem;
     }
 
 
-    #top-block-add-anime, #bot-block-add-anime{
+    .top-block-add-anime, .bot-block-add-anime{
         flex-direction: row;
         margin: 0;
     }
 
-    #top-block-add-anime{
+    .top-block-add-anime{
         margin-top: 0;
     }
 
-    #top-left{
+    .top-left{
         margin-bottom: 3rem;
     }
 
-    #bot-left{
+    .bot-left{
         margin-top:-4rem;
     }
 
-    #bot-right{
+    .bot-right{
         margin-top: 1rem;
     }
 
-
-    #textarea-container{
+    .textarea-container{
         min-width: 60%;
         max-width: 60%;
     }
@@ -332,28 +315,33 @@ textarea[name="synopsis"]::-webkit-scrollbar-thumb {
         font-size: larger;
     }
 
-    #container-img-added{
+    /* .container-img-added{
         margin: 0 2rem;
     }
+
+    .close:before, .close:after {
+        top: 0.5rem;
+        right: 15%;
+    } */
 }
 
 @media only screen and (min-device-width : 1024px){
 
-    #form-add-anime{
+    .form-add-anime{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    #form-add-anime>form{
+    .form-add-anime>form{
         width: 60%;
         margin-top: 0;
     }
 
-    #top-block-add-anime, #bot-block-add-anime{
+    .top-block-add-anime, .bot-block-add-anime{
         margin: 0 0 2rem 0;
     }
     
-    #submit-add-anime{
+    .submit-add-anime, .submit-update-anime{
         font-size: x-large;
     }
 

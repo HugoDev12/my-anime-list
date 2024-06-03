@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/all.css">
-    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/home.css">
+    <link rel="stylesheet" href="../../public/css/anime.css">
     <link rel="stylesheet" href="../../public/css/add-anime.css">
     <link rel="stylesheet" href="../../public/css/login.css">
     <link rel="icon" type="image/x-icon" href="../../imgs/f8d57c53ea2a50fdbd721c6191315fb5.jpg">
@@ -15,20 +16,30 @@
     <header>
         <div id="header-block">
             <h1>MyAnimeList</h1>
-            <aside id="login">
+            <?php if($_SESSION): ?>
+                <aside id="logout">
+                    <form action="" method="POST">
+                        <button type="submit" name="logout">Logout</button>
+                    </form>
+                </aside>
+            <?php else: ?>
+                <aside id="login">
                     <a href="../../public/index.php?p=login">Login</a>
                 </aside>
+            <?php endif; ?>
             <nav>
                 <ul>
                     <li>
-                        <div><a href="index.php" class="nav-item">Accueil</a></div>
+                        <div><a href="../../public/index.php?p=home" class="nav-item">Accueil</a></div>
                     </li>
                     <li>
                         <div id="contact-nav-item"><a href="#" class="nav-item" id="contact-item">Contact</a></div>
                     </li>
+                    <?php if($admin): ?>
                     <li>
                         <div id="contact-nav-item"><a href="../../public/index.php?p=add-anime" class="nav-item" id="contact-item">Ajouter</a></div>
                     </li>
+                    <?php endif ?>
                 </ul>
             </nav>
         </div>

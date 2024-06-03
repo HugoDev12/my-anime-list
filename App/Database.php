@@ -43,13 +43,32 @@ class Database{
         return $this->pdo;
     }
 
-    public function query($stmt, $class){
-        $req = $this->getPDO()->query($stmt);
-        $datas = $req->fetchAll(\PDO::FETCH_CLASS, $class);
+
+
+    public function select(string $field, string $value, string $table, string $class){
+        $sql = "SELECT * FROM ".$table." WHERE ".$field." = :".$field."";
+
+        $req = $this->getPDO()->prepare($sql);
+        // return $req;
+        $req->bindParam(":".$field, $value, \PDO::PARAM_STR);
+        $req->execute();
+
+        $req->setFetchMode(\PDO::FETCH_CLASS, $class);
+        $datas = $req->fetch();
         return $datas;
     }
 
-
+    /**
+     * @param string $table
+     * @param string $class
+     * 
+     * @return [type]
+     */
+    public function selectAll(string $table, string $class){
+        $req = $this->getPDO()->query("SELECT * FROM ".$table);
+        $datas = $req->fetchAll(\PDO::FETCH_CLASS, $class);
+        return $datas;
+    }
 
     /**
      * @param string $table /the name of the table focused
@@ -68,6 +87,24 @@ class Database{
         $req = $this->getPDO()->prepare($sql);
         $req->execute($params); // will bind all parameters to PDO::PARAM_STR, if you want other bindings then use normal bindParam method
 
+    }
+
+    public function update(int $id, string $table, array $params){
+        foreach($params as $k=>$v) $fields[] = $k.'=:'.$k;
+
+        $stmt = join(",",$fields);
+        $sql = 'UPDATE '.$table.' SET '.$stmt.' WHERE id ='.$id;
+        $req = $this->getPDO()->prepare($sql);
+        $req->execute($params);
+        // return $sql;
+    }
+
+    public function delete(int $id, string $table, string $imgFile){
+        $req = $this->getPDO()->prepare("DELETE FROM $table WHERE id = :id");
+        $req->bindParam(":id", $id, \PDO::PARAM_INT);
+        $req->execute();
+        unlink("../imgs/".$imgFile);
+        // return $req;
     }
 
 }

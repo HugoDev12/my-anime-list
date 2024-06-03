@@ -68,7 +68,7 @@ nav>ul>li{
     justify-content: center;
 }
 
-nav>ul>li>div, #login{
+nav>ul>li>div, #login, #logout{
     height: 2.5em;
     width:7rem;
     background: inherit;
@@ -82,7 +82,7 @@ nav>ul>li>div, #login{
     justify-content: center;
 }
 
-#login{
+#login, #logout{
     position: absolute;
     right: 0.3rem;
     top: 5px;
@@ -91,7 +91,7 @@ nav>ul>li>div, #login{
     border-width: 2px 2px 3px 3px;
 }
 
-#login>a{
+#login>a, #logout>form>button{
     font-size: small;
     transform: rotate(2deg);
     padding-right: 3px;
@@ -102,7 +102,7 @@ nav>ul>li>div, #login{
     background-color: white;
 }
 
-nav>ul>li>div:hover, #login:hover{
+nav>ul>li>div:hover, #login:hover, #logout:hover{
     background-color: white;
 }
 
@@ -176,7 +176,7 @@ footer>h3{
 
 }
 @media only screen and (min-device-width : 768px){
-    #login{
+    #login, #logout{
         right: 1rem;
         top: 1rem;
         height: 2em;
@@ -184,7 +184,7 @@ footer>h3{
         border-width: 2px 2px 3px 3px;
     }
     
-    #login>a{
+    #login>a, #logout>form>button{
         font-size: large;
         box-shadow: 2px 2px 0 #222;
     }

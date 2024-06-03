@@ -1,0 +1,59 @@
+
+section>h2{
+    text-align: center;
+}
+
+#delete-anime, #update-anime{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#delete-anime>button, #update-anime>button{
+    left: 0;
+}
+
+#update-anime>button::after{
+    background-color: #ffe75f;
+}
+
+#anime-content{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+#anime-content>div{
+    width: 50%;
+}
+#anime-content>div>figure{
+    display: flex;
+    justify-content: center;
+}
+
+#anime-content>div>figure>img{
+    width: 250%;
+    max-width: 400px;
+}
+
+#anime-content>aside{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    
+    #anime-content{
+        flex-direction: row;
+    }
+
+    #anime-content>aside>p{
+        margin-right: 2rem;
+    }
+}

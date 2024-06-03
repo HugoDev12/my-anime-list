@@ -32,7 +32,7 @@
     align-items: center;
 }
 
-#login-username-container, 
+#login-email-container, 
 #login-pass-container{
     margin: 2rem 0;
     width: 50%;
@@ -59,7 +59,7 @@ button[name="login"]:after{
 
 @media only screen and (min-device-width : 768px){
 
-    #login-username-container, 
+    #login-email-container, 
     #login-pass-container{
         width: 40%;
     }
