@@ -91,8 +91,8 @@ class Database{
 
     public function update(int $id, string $table, array $params){
         foreach($params as $k=>$v) $fields[] = $k.'=:'.$k;
-
         $stmt = join(",",$fields);
+        
         $sql = 'UPDATE '.$table.' SET '.$stmt.' WHERE id ='.$id;
         $req = $this->getPDO()->prepare($sql);
         $req->execute($params);
@@ -104,6 +104,7 @@ class Database{
         $req->bindParam(":id", $id, \PDO::PARAM_INT);
         $req->execute();
         unlink("../imgs/".$imgFile);
+        unlink("../imgs_rembg/".$imgFile);
         // return $req;
     }
 

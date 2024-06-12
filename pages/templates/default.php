@@ -58,5 +58,3 @@
     <script src="/public/js/form-add-anime.js"></script>
 </body>
 </html>
-
-    <!--<script src="/public/js/form-add-anime.js"></script>-->

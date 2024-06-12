@@ -1,5 +1,5 @@
 <?php
-var_dump($admin);
+// var_dump($admin);
 $anime = $db->select("id", $_GET['id'], "anime", "App\Models\Anime");
 // var_dump($anime);
 
@@ -17,7 +17,7 @@ if(isset($_POST["delete"]) && empty($_POST["delete"])){
     <div id="anime-content">   
         <div>
             <figure>
-                <img src="../imgs/<?= $anime->getImage(); ?>" alt="<?= $anime->getName(); ?>">
+                <img src="../imgs_rembg/<?= $anime->getImage(); ?>" alt="<?= $anime->getName(); ?>">
             </figure>
         </div>
 

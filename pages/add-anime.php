@@ -30,7 +30,7 @@ require_once "../Controller/formAnimeLogic.php";
                 <div class="col-3 input-rate-container">
                     <input class="effect" type="number" name="rate" id="rate" min="1" max="5" value="<?= $rate; ?>">
                     <label for="rate" class="label-effect">Note (entre 1 et 5)</label>
-                    <span style="color:red" class="hiddenAlert" <?= $hiddenAlertRate; ?>>Doit être compris entre 0 et 5 inclus.</span>
+                    <span style="color:red" class="hiddenAlert" <?= $hiddenAlertRate; ?>>Doit être compris entre 1 et 5 inclus.</span>
 
 
                 </div>

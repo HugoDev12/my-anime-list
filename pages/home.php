@@ -12,7 +12,7 @@ $animes = $db->selectAll("anime","App\Models\Anime");
     <?php foreach($animes as $anime): ?>
         <article class="card">
             <figure style="background-color: <?= $anime->getColor() ?>;">
-                <img src=<?= "../imgs/".$anime->getImage(); ?> alt=<?= $anime->getName(); ?>>
+                <img src=<?= "../imgs_rembg/".$anime->getImage(); ?> alt=<?= $anime->getName(); ?>>
             </figure>
             <div class="card-text">
                 <h2><?= $anime->getName(); ?></h2>

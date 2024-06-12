@@ -1,8 +1,7 @@
 <?php
 
-use App\Database;
-use App\Models\Anime;
 use App\Image;
+
 
 // var_dump($admin);
 
@@ -60,8 +59,10 @@ if(isset($_POST["update-anime"]) && empty($_POST["update-anime"])){
 if(isset($_POST["submit-add-anime"])){
     unset($_POST["submit-add-anime"]);
 
+    // secure datas from inputs
+    foreach ($_POST as $k => $v) $params[$k] = htmlspecialchars($v);
+
     // Set parameters for the insertion later
-    $params = $_POST;
     $params["slug"] = $params["name"];
     $params["date"] = $today->format("Y-m-d H:i:s"); 
 
@@ -79,13 +80,6 @@ if(isset($_POST["submit-add-anime"])){
     if(isset($_FILES["image"]) && !empty($_FILES["image"]["name"])){
 
         $imgFile = new Image($_FILES["image"]);
-
-        // $command = escapeshellcmd("python ../RemoveBg/remove_bg ". join(" ", $_FILES["image"]));
-        // exec($command, $output, $resultCode);
-
-        // echo"<pre>";
-        // var_dump($imgFile->test2()); // //ok pour récupérer l'output du fichier python
-        // echo"</pre>";
 
         if($imgFile->error()){
             $hiddenAlertImg = "";
@@ -137,9 +131,8 @@ if(isset($_POST["submit-add-anime"])){
         // create anime
         }else{
             $anime = $db->insert("anime", $params);
-            // upload image in imgs folder
+            // upload image in imgs folder AND image with no background in another folder
             $imgFile->upload();
-            // redirect to home 
             // add message to confirm anime added (later with session)
             header("Location: index.php?p=home");
             exit;
@@ -151,7 +144,6 @@ if(isset($_POST["submit-add-anime"])){
             if($key === "name"){
                 if(empty($value)){
                     $hiddenAlertName = "";
-                    var_dump($hiddenAlertName);
                 }else {
                     $hiddenAlertName = "hidden";
                     $name = $value;

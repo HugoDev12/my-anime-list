@@ -120,7 +120,7 @@ select[name="type"] ~ label{
 
 .input-release-date-container{
     position: relative;
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .input-release-date-container>label{

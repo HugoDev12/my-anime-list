@@ -29,8 +29,9 @@
     /* background-color: rgba(255, 216, 144, 0.737); */
 }
 /* .card>figure>img{
-    width: 130%;
-    height: 100%;
+ 
+    max-width: 400px;
+    overflow: hidden;
 } */
 .card-text{
     border-top: 5px solid;

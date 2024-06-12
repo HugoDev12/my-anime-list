@@ -44,45 +44,19 @@ imgInput.addEventListener("change", ()=>{
 })
 
 removeSelectedImg.addEventListener("click", (e) => {
-    console.log(e.target.previousElementSibling.firstChild);
-    e.target.previousElementSibling.firstChild.textContent = "";
+    // console.log(e.target.previousElementSibling);
+    imgName.firstChild.textContent = "";
+    // e.target.previousElementSibling.firstChild.textContent = "";
     e.target.classList.remove("close");
 
 })
-
-
-// // display img name file when selected
-// let imgFile = document.getElementById("image");
-// let div = document.createElement('div');
-// let span = document.getElementsByClassName("img-added");
-
-// imgFile.addEventListener("change", function(){
-//     const [file] = imgFile.files;
-//     console.log(span[0], span[0].firstChild);
-//     span[0].firstChild.textContent = file["name"];
-//     // add cross logo in span to remove selected img on click
-//     div.innerHTML = "<span class='close' onclick='removeImg(this)'></span>";
-//     span[0].parentNode.insertBefore(div.firstChild, span.nextSibling);
-// })
-
-// // display cross in case an anime is updated and got an image.
-// if(span[0].firstChild.textContent.length > 0){
-//     span[0].parentNode.insertBefore(div.firstChild, span.nextSibling);
-// }
-
-// // remove img name file on corss clicked
-// function removeImg(e){
-//     // console.log(navigator.userAgent);
-    // e.previousElementSibling.firstChild.textContent = "";
-    // e.classList.remove("close");
-// }
 
 // adjust input number value between 0 and 5
 let inputRate = document.getElementById("rate");
 inputRate.addEventListener("change", function(){
     console.log(this.value);
-    if(this.value < 0){
-        this.value = 0;
+    if(this.value < 1){
+        this.value = 1;
     } 
     if(this.value > 5){
         this.value = 5;
